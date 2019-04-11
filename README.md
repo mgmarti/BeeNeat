@@ -1,6 +1,6 @@
 # project-1
 
-> https://mgmarti.github.io/project-1/
+> Live page: https://mgmarti.github.io/project-1/
 
 ## Project Summary
 
@@ -8,17 +8,17 @@
 
 ## Developers
 
-- Suha A: Role
-  - Portfolio
-  - Github
+- Suha Alobaidi: Role
+  - Portfolio:
+  - Github: https://github.com/Suha19
   - LinkedIn
-- Monica M: Role
+- Monica Martinez: Role
   - Portfolio
-  - Github
+  - Github: https://github.com/mgmarti
   - LinkedIn
-- James: Role
-  - Portfolio
-  - Github
+- James Onyung: Role
+  - Portfolio:
+  - Github: https://github.com/jonyung1205
   - LinkedIn
 
 ## Animated Gifs/Pictures of App

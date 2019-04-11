@@ -39,9 +39,14 @@ a:hover {
     text-align: left;
 }
 
+
+#card-display {
+    margin: 30px;
+}
+
 .btn {
     background-color: #750e02;
-    color: #fee85e;
+    color: #ffffff;
 }
 
 .btn:hover {
