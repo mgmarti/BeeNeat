@@ -1,0 +1,61 @@
+.navbar {
+    background-color: #750e02;
+    color: #fee85e;
+}
+
+a:active {
+    color: #fee85e;
+}
+
+a:visited {
+    color: #fee85e;
+}
+
+a:hover {
+    color: #fee85e;
+}
+
+.jumbotron {
+    background-image: url('../images/header-image-2.jpg');
+    background-size: cover;
+    color: #fee85e;
+}
+
+#form-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+#form-display {
+    color: #750e02;
+    padding: 40px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn {
+    background-color: #750e02;
+    color: #fee85e;
+}
+
+.btn:hover {
+    background-color: #bf5d02;
+    color: #fee85e;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fee85e;
+
+}
