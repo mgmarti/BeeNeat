@@ -1,81 +1,157 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyDzsO2YwUBjQr5EBtuDDI5zbSahwgzpfjo",
-    authDomain: "bee-neat.firebaseapp.com",
-    databaseURL: "https://bee-neat.firebaseio.com",
-    projectId: "bee-neat",
-    storageBucket: "bee-neat.appspot.com",
-    messagingSenderId: "81729098029"
-};
-firebase.initializeApp(config);
+    apiKey: "AIzaSyBITQiCOisrmxRtKnkin-1fns3stK90bmk",
+    authDomain: "myfirstproject-7afc2.firebaseapp.com",
+    databaseURL: "https://myfirstproject-7afc2.firebaseio.com",
+    projectId: "myfirstproject-7afc2",
+    storageBucket: "myfirstproject-7afc2.appspot.com",
+    messagingSenderId: "585615568514"
+  };
+  firebase.initializeApp(config);
 
 // Variable for database reference
 var database = firebase.database();
 
-// Variables for the item
+// Create a variable to reference the database.
 
-// When a user clicks a button 
-$("#form").submit(function (event) {
-    //Prevent your default behavior
+var Fname = "";
+var Lname = "";
+var email = "";
+var password = "";
+var passwordCon = "";
+var address = "";
+var address2 = "";
+var city = "";
+var state = "";
+var zip = "";
+
+// on click function to Capture Button Creat account
+$("#submit").on("click", function (event) {
     event.preventDefault();
+    // checkPassword();
 
-$(".name").on("click", function () {
-    //Prevent your default behavior
-    event.preventDefault();
+     // Constructing a queryURL using the address name
+     var queryURL = "https://www.google.com/maps/dir/?" +
+     address + "&api_key=AIzaSyD057zsoWxVfH2YsDMgJkwq62OJYd1s-hI";
 
-$(".size").on("click", function () {
-    //Prevent your default behavior
-    event.preventDefault();
+     $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      .then(function(response) {
+        console.log(queryURL);
+        address = response.data;
 
-$(".weight").on("click", function () {
-    //Prevent your default behavior
-    event.preventDefault();  
+    });
 
-$(".image").on("click", function () {
-    //Prevent your default behavior
-    event.preventDefault();
+    Fname = $("#inputFName").val().trim();
+    Lname = $("#inputLName").val().trim();
+    email = $("#inputEmail").val().trim();
+    password = $("#inputPassword").val().trim();
+    passwordCon = $("#confirmPassword").val().trim();
+    address = $("#inputAddress").val().trim();
+    address2 = $("#inputAddress2").val().trim();
+    city = $("#inputCity").val().trim();
+    state = $("#inputState").val().trim();
+    zip = $("#inputZip").val().trim();
+    
 
-$(".color").on("click", function () {
-    //Prevent your default behavior
-    event.preventDefault();
+    database.ref().push({
+        Fname: Fname,
+        Lname: Lname,
+        email: email,
+        // password: password,
+        // passwordCon: passwordCon,
+        address: address,
+        address2: address2,
+        city: city,
+        state: state,
+        zip: zip
+       
+    });
+});
+database.ref().on("value", function (snapshot) {
+
+    // Log everything that's coming out of snapshot
+    console.log(snapshot.val());
+    // console.log(snapshot.val().Fname);
+    // console.log(snapshot.val().Lname);
+    // console.log(snapshot.val().email);
+    // console.log(snapshot.val().password);
+    // console.log(snapshot.val().passwordCon);
+    // console.log(snapshot.val().address);
+    // console.log(snapshot.val().address2);
+    // console.log(snapshot.val().city);
+    // console.log(snapshot.val().state);
+    // console.log(snapshot.val().zip);
+
+ 
+    function checkPassword() {
+   
+        var letter = /[a-z]/;
+        var letterUp = /[A-Z]/;
+        var number = /[0-9]/;
+    
+        if (passw.length < 6 || password != passwordCon || !letter.test(password) || !number.test(password)) {
+            if (password.length < 6) {
+                alert("Please make sure password is longer than 6 characters.")
+                return false;
+            }
+            if (password != passwordCon) {
+                alert("Please make sure passwords match.")
+                return false;
+            }
+            if (!letter.test(password) || !letterUp.test(password)) {
+                alert("Please make sure Password Includes an UpperCase and LowerCase character")
+                return false;
+            }
+            if (!number.test(password)) {
+                alert("Please make sure Password Includes a Digit")
+                return false;
+            }
+    
+            /*email test*/
+            
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(email)) {
+                alert('Please provide a valid email address');
+                form.email.focus;
+                return false;
+            }
+            return true;
+        }
+    }
+
+
+    // Handle the errors
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+});
 
 
 
 
+// // When a user clicks a button 
+// $("#form").submit(function (event) {
+//     //Prevent your default behavior
+//     event.preventDefault();
 
+// $(".name").on("click", function () {
+//     //Prevent your default behavior
+//     event.preventDefault();
 
+// $(".size").on("click", function () {
+//     //Prevent your default behavior
+//     event.preventDefault();
 
+// $(".weight").on("click", function () {
+//     //Prevent your default behavior
+//     event.preventDefault();  
 
+// $(".image").on("click", function () {
+//     //Prevent your default behavior
+//     event.preventDefault();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// $(".color").on("click", function () {
+//     //Prevent your default behavior
+//     event.preventDefault();
