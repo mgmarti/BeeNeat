@@ -1,14 +1,13 @@
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyBITQiCOisrmxRtKnkin-1fns3stK90bmk",
-    authDomain: "myfirstproject-7afc2.firebaseapp.com",
-    databaseURL: "https://myfirstproject-7afc2.firebaseio.com",
-    projectId: "myfirstproject-7afc2",
-    storageBucket: "myfirstproject-7afc2.appspot.com",
-    messagingSenderId: "585615568514"
+    apiKey: "AIzaSyBDaHTMsP589gZdav0-0cFSRrkWkNCzQv4",
+    authDomain: "project-1-a07c8.firebaseapp.com",
+    databaseURL: "https://project-1-a07c8.firebaseio.com",
+    projectId: "project-1-a07c8",
+    storageBucket: "project-1-a07c8.appspot.com",
+    messagingSenderId: "250875338516"
   };
   firebase.initializeApp(config);
-
 // Variable for database reference
 var database = firebase.database();
 
@@ -31,18 +30,18 @@ $("#submit").on("click", function (event) {
     // checkPassword();
 
      // Constructing a queryURL using the address name
-     var queryURL = "https://www.google.com/maps/dir/?" +
-     address + "&api_key=AIzaSyD057zsoWxVfH2YsDMgJkwq62OJYd1s-hI";
+    //  var queryURL = "https://www.google.com/maps/dir/?" +
+    //  address + "&api_key=AIzaSyD057zsoWxVfH2YsDMgJkwq62OJYd1s-hI";
 
-     $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-      .then(function(response) {
-        console.log(queryURL);
-        address = response.data;
+    //  $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    //   })
+    //   .then(function(response) {
+    //     console.log(queryURL);
+    //     address = response.data;
 
-    });
+    // });
 
     Fname = $("#inputFName").val().trim();
     Lname = $("#inputLName").val().trim();
