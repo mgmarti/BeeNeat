@@ -11,7 +11,7 @@
 - Suha Alobaidi: Role
   - Portfolio:
   - Github: https://github.com/Suha19
-  - LinkedIn
+  - LinkedIn: linkedin.com/in/suha-alobaidi-719236156
 - Monica Martinez: Role
   - Portfolio
   - Github: https://github.com/mgmarti
@@ -39,10 +39,12 @@
 ## MVP
 
 - List the Must Have Features
+minimum viable product - User must be able to Sign-up/Login(user authentication). Once in their account, user must be able to add items to inventory list or look at previously stored items which will be pulled from database to show user what they have previously stored.
 
 ## Stretch Goals
 
 - What you will try to accomplish after MVP
+Adding buttons for the categories and assigning categories for each button
 
 ## Future Development
 
