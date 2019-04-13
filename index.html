@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bee Neat Storage</title>
+    <title>BeeNeat Storage</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,28 +15,17 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
+<header>BEENEAT</header>
+
 <body>
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">BeeNeat</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-        </div>
+    <nav class="navbar">
+            <div class="col-md-3"><a href="./home.html">HOME</a></div> 
+            <div class="col-md-3"><a href="./about.html">ABOUT</a></div>
+            <div class="col-md-3"><a href="./index.html">LOGIN</a></div>                                            
     </nav>
-
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1>[logo here]</h1>
-            <h2>Perfect Organization Starts Here</h2>
+    <div class="container text-center">
+            <h3>A place everything and everthing is its place.</h3>
         </div>
 
         <!-- Form -->
@@ -114,12 +103,13 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn" id="submit">Create Account</button>
-                                      
+
                 </form>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
+    <div id="welcomeUser"></div>
 
     <!-- brandon -->
     <!-- <div class="card-container">
@@ -138,7 +128,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h6>Sticky Footer Here</h6>
+            <h6>© 2019 BeeNeat. All rights reserved.</h6>
         </div>
     </footer>
 
@@ -148,7 +138,7 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <!-- Firebase Script -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="./logic.js"></script>

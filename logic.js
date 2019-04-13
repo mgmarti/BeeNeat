@@ -27,7 +27,6 @@ var zip = "";
 // on click function to Capture Button Creat account
 $("#submit").on("click", function (event) {
     event.preventDefault();
-    // checkPassword();
 
      // Constructing a queryURL using the address name
     //  var queryURL = "https://www.google.com/maps/dir/?" +
@@ -68,6 +67,8 @@ $("#submit").on("click", function (event) {
         zip: zip
        
     });
+    // checkPassword();
+    createAccount();
 });
 database.ref().on("value", function (snapshot) {
 
@@ -127,7 +128,19 @@ database.ref().on("value", function (snapshot) {
     console.log("Errors handled: " + errorObject.code);
 });
 
+function createAccount(){
+   
+    $("#form-container").empty();
+   
+    //Create a variable called "user Acc" and set the user name to a new div.
+    var userAcc = $("<div>");
+        userAcc.addClass("welcomeUser");
+        userAcc.text($(this).attr("Fname"));
+        $("#welcomeUser").append(userAcc);
 
+    
+    
+}
 
 
 // // When a user clicks a button 
