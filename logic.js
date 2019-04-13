@@ -137,7 +137,7 @@ function createAccount(){
         userAcc.addClass("welcomeUser");
         userAcc.text($(this).attr("Fname"));
         $("#welcomeUser").append(userAcc);
-
+    
     
     
 }
