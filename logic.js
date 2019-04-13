@@ -27,9 +27,8 @@ var zip = "";
 // on click function to Capture Button Creat account
 $("#submit").on("click", function (event) {
     event.preventDefault();
-    // checkPassword();
 
-     // Constructing a queryURL using the address name
+    //  Constructing a queryURL using the address name
     //  var queryURL = "https://www.google.com/maps/dir/?" +
     //  address + "&api_key=AIzaSyD057zsoWxVfH2YsDMgJkwq62OJYd1s-hI";
 
@@ -59,8 +58,8 @@ $("#submit").on("click", function (event) {
         Fname: Fname,
         Lname: Lname,
         email: email,
-        // password: password,
-        // passwordCon: passwordCon,
+        password: password,
+        passwordCon: passwordCon,
         address: address,
         address2: address2,
         city: city,
@@ -68,66 +67,79 @@ $("#submit").on("click", function (event) {
         zip: zip
        
     });
+    checkPassword();
+    createAccount();
 });
-database.ref().on("value", function (snapshot) {
+
+database.ref().on("child_added", function(snapshot) {
 
     // Log everything that's coming out of snapshot
     console.log(snapshot.val());
-    // console.log(snapshot.val().Fname);
-    // console.log(snapshot.val().Lname);
-    // console.log(snapshot.val().email);
-    // console.log(snapshot.val().password);
-    // console.log(snapshot.val().passwordCon);
-    // console.log(snapshot.val().address);
-    // console.log(snapshot.val().address2);
-    // console.log(snapshot.val().city);
-    // console.log(snapshot.val().state);
-    // console.log(snapshot.val().zip);
-
- 
-    function checkPassword() {
    
-        var letter = /[a-z]/;
-        var letterUp = /[A-Z]/;
-        var number = /[0-9]/;
-    
-        if (passw.length < 6 || password != passwordCon || !letter.test(password) || !number.test(password)) {
-            if (password.length < 6) {
-                alert("Please make sure password is longer than 6 characters.")
-                return false;
-            }
-            if (password != passwordCon) {
-                alert("Please make sure passwords match.")
-                return false;
-            }
-            if (!letter.test(password) || !letterUp.test(password)) {
-                alert("Please make sure Password Includes an UpperCase and LowerCase character")
-                return false;
-            }
-            if (!number.test(password)) {
-                alert("Please make sure Password Includes a Digit")
-                return false;
-            }
-    
-            /*email test*/
-            
-            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            if (!filter.test(email)) {
-                alert('Please provide a valid email address');
-                form.email.focus;
-                return false;
-            }
-            return true;
-        }
-    }
-
+    console.log(snapshot.val().Fname);
+    console.log(snapshot.val().Lname);
+    console.log(snapshot.val().email);
+    console.log(snapshot.val().password);
+    console.log(snapshot.val().passwordCon);
+    console.log(snapshot.val().address);
+    console.log(snapshot.val().address2);
+    console.log(snapshot.val().city);
+    console.log(snapshot.val().state);
+    console.log(snapshot.val().zip);
 
     // Handle the errors
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+function checkPassword() {
+   
+    var letter = /[a-z]/;
+    var letterUp = /[A-Z]/;
+    var number = /[0-9]/;
 
+    if (password.length < 6 || password != passwordCon || !letter.test(password) || !number.test(password)) {
+        if (password.length < 6) {
+            alert("Please make sure password is longer than 6 characters.")
+            return false;
+        }
+        if (password != passwordCon) {
+            alert("Please make sure passwords match.")
+            return false;
+        }
+        if (!letter.test(password) || !letterUp.test(password)) {
+            alert("Please make sure Password Includes an UpperCase and LowerCase character")
+            return false;
+        }
+        if (!number.test(password)) {
+            alert("Please make sure Password Includes a Digit")
+            return false;
+        }
 
+        /*email test*/
+        
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email)) {
+            alert('Please provide a valid email address');
+            form.email.focus;
+            return false;
+        }
+        return true;
+    }
+}
+
+function createAccount(){
+   
+    $("#form-container").empty();
+   
+    //Create a variable called "user Acc" and set the user name to a new div.
+    var userAcc = $("<div>");
+        userAcc.addClass("welcomeUser");
+        userAcc.text($(this).attr("Fname"));
+        $("#welcomeUser").append(userAcc);
+
+    
+    
+}
 
 
 // // When a user clicks a button 

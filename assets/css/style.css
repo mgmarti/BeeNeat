@@ -1,10 +1,37 @@
-.navbar {
-    background-color: #750e02;
+body { 
+    background-image: url('../images/header-image-2.jpg');
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%;
+    overflow: auto;
+    z-index: -1px; 
+    background-size: cover;
     color: #fee85e;
+  }
+  header{
+    font-weight: bold;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-size: 35px;
+    line-height: 2em;
+    background-color:  #750e02; 
+    text-align: center;
+    
+
+  }
+.navbar {
+    
+    color: #fee85e;
+    font-weight: bold;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    /* background-color: #750e02; */
+    position: fixed;
+    margin-top: 30px;
+
 }
+
 
 a:active {
     color: #fee85e;
+    
 }
 
 a:visited {
@@ -15,11 +42,6 @@ a:hover {
     color: #fee85e;
 }
 
-.jumbotron {
-    background-image: url('../images/header-image-2.jpg');
-    background-size: cover;
-    color: #fee85e;
-}
 
 #form-container {
     margin-top: 30px;
@@ -57,10 +79,11 @@ a:hover {
 .footer {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    background-color: #f5f5f5;
-    padding-top: 15px;
-    padding-bottom: 15px;
     background-color: #fee85e;
-
+    color: #750e02;
+    font-size: 15px;
+    text-align: center;
 }
+
