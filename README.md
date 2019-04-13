@@ -11,7 +11,7 @@
 - Suha Alobaidi: Role
   - Portfolio:
   - Github: https://github.com/Suha19
-  - LinkedIn
+  - LinkedIn: linkedin.com/in/suha-alobaidi-719236156
 - Monica Martinez: Role
   - Portfolio
   - Github: https://github.com/mgmarti
