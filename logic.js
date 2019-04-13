@@ -91,6 +91,7 @@ database.ref().on("child_added", function(snapshot) {
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+
 function checkPassword() {
    
     var letter = /[a-z]/;
