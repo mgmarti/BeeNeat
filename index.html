@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- <i class="fab fa-forumbee"></i> -->
+  <link rel="shortcut icon" href=".\assets\images\logo.jpg" type="image/png">
   <title>Bee Neat Storage</title>
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity= "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- ajax  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- CSS -->
@@ -36,6 +38,7 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Login</a>
         </li>
+        </ul>
     </div>
   </nav>
   <!-- Jumbotron -->
@@ -44,8 +47,8 @@
       <h1>BEENEAT</h1>
       <h2>A place for everything and everything is in its place.</h2>
     </div>
-
   </div>
+
   <div class="container">
 
     <div class="userAuth unauthenticated pull-right">
@@ -56,18 +59,13 @@
       <button type="button" class="btn btn-success" id="logout">Logout</button>
     </div>
 
-
-    <main class="authenticated">
-
-      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register"
-        aria-hidden="true">
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <form id="registerForm" method="POST">
               <div class="modal-header">
                 <h4 class="modal-title" id="registerModalLabel">Register</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
               <div class="modal-body">
                 <div class="form-group">
@@ -126,6 +124,7 @@
           </div>
         </div>
       </div>
+      
 
 
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
