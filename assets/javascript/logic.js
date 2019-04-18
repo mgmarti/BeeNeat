@@ -21,7 +21,6 @@ var Lname = "";
 var email = "";
 var password = "";
 var passwordCon = "";
-
 var  Lemail ="";
 var Lpassword="";
 
@@ -76,29 +75,13 @@ database.ref().on("child_added", function(snapshot) {
   }).catch(function(error){
     console.log("Login Failed!", error.message);
   })
-    
-    // function(error) {
-    // console.log("Login Failed!", error);
-    //   }
-
   });
-  // var searchUser = function(userLog) {
-  //   var queryURL = "https://project-1-a07c8.firebaseio.com" + userLog + "&apikey=AIzaSyBDaHTMsP589gZdav0-0cFSRrkWkNCzQv4";
-  //   $.ajax({
-  //     url: queryURL,
-  //     method: "GET"
-  //   }).then(function(response) {
-  //     consol.log(response);
-  //   });
-  // };
-
- 
-   
-    //   $("#logout").click(function() {
-    //   $("#doLogin").reset();
-    //   $("#doRegister").reset();
-
-    // });
+  
+      $("#logout").click(function() {
+        auth.signOut().then(function(user){
+          console.log("signout")
+        })
+    });
 
 // function checkPassword() {
    
@@ -138,13 +121,16 @@ database.ref().on("child_added", function(snapshot) {
 
 function createAccount(){
    
-    $("#doRegister").empty();
-    $("#doLogin").empty();
+    $("#buttons").empty();
+    $("#registerForm").empty();
+    $("#loginForm").empty();
+    
+    
    
     //Create a variable called "user Acc" and set the user name to a new div.
     var userAcc = $("<div>");
         userAcc.addClass("welcomeUser")
-        userAcc.text($(this).attr("email"));
+        userAcc.text($(this).attr("Fname"));
         $("#welcomeUser").append(userAcc);
     
     
