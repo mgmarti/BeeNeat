@@ -72,6 +72,13 @@ a:hover {
     background-color: #bf5d02;
     color: #fee85e;
 }
+.social,#buttons{
+    margin: 50px;
+}
+#logout{
+    float: right;
+}
+
 
 .footer {
     position: fixed;
