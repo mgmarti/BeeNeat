@@ -1,0 +1,33 @@
+body {
+    background-image: url("../images/yellow_texture.jpg");
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+    margin: 50px;
+    padding: 50px;
+}
+
+
+h2 {
+    color: #000000;
+    width: 300px;
+    margin: 0 auto;
+}
+
+input[type=text],
+select {
+    position: sticky;.
+    padding: 10px 10px;
+    margin: 10px 0;
+    font-size: 15px;
+    border: 2px solid #750e02;
+    border-radius: 10px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 50px 50px;
+    background: rgb(200, 54, 54);
+    background: rgba(200, 54, 54, 0.5);
+}
+
