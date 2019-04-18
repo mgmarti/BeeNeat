@@ -1,5 +1,4 @@
-
-    var config = {
+   var config = {
             apiKey: "AIzaSyBDaHTMsP589gZdav0-0cFSRrkWkNCzQv4",
             authDomain: "project-1-a07c8.firebaseapp.com",
             databaseURL: "https://project-1-a07c8.firebaseio.com",
@@ -9,7 +8,11 @@
           };
     firebase.initializeApp(config);
 
+    
 var database = firebase.database();
+var auth = firebase.auth();
+var currentUser = auth.currentUser;
+console.log(currentUser)
 
 // Create a variable to reference the database.
 
@@ -33,22 +36,26 @@ $("#doRegister").on("click", function (event) {
     email = $("#registerEmail").val().trim();
     password = $("#registerPassword").val().trim();
     passwordCon = $("#registerConfirmPassword").val().trim();
-
-    database.ref().push({
-        Fname: Fname,
-        Lname: Lname,
-        email: email,
-        password: password,
-        passwordCon: passwordCon,
-
-    });
+   
+    // database.ref().push({
+    //     Fname: Fname,
+    //     Lname: Lname,
+    //     email: email,
+    //     password: password,
+    //     passwordCon: passwordCon,
+    
+    // });
     // checkPassword();
-    createAccount();
+    auth.createUserWithEmailAndPassword(email, password).then(function(user){
+      createAccount();
+      console.log(user)
+    })
+  
 });
 
 database.ref().on("child_added", function(snapshot) {
 
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
    
 // Handle the errors
 }, function (errorObject) {
@@ -56,18 +63,25 @@ database.ref().on("child_added", function(snapshot) {
 });
 
 
-//Login Function
-  // $("#doLogin").on("click", function (event) {
-  //   event.preventDefault();
-  //   Lemail = $("#loginEmail").val().trim();
-  //   Lpassword = $("#loginpassword").val().trim();
-  
+// Login Function
+  $("#doLogin").on("click", function (event) {
+    event.preventDefault();
+    Lemail = $("#loginEmail").val().trim();
+    Lpassword = $("#loginPassword").val().trim();
+    console.log(Lemail)
+    console.log(Lpassword)
+  auth.signInWithEmailAndPassword(Lemail, Lpassword).then(function(user){
+    createAccount();
+    console.log(user)
+  }).catch(function(error){
+    console.log("Login Failed!", error.message);
+  })
     
     // function(error) {
     // console.log("Login Failed!", error);
     //   }
 
-  // });
+  });
   // var searchUser = function(userLog) {
   //   var queryURL = "https://project-1-a07c8.firebaseio.com" + userLog + "&apikey=AIzaSyBDaHTMsP589gZdav0-0cFSRrkWkNCzQv4";
   //   $.ajax({
@@ -124,12 +138,13 @@ database.ref().on("child_added", function(snapshot) {
 
 function createAccount(){
    
-    $("doRegister").empty();
+    $("#doRegister").empty();
+    $("#doLogin").empty();
    
     //Create a variable called "user Acc" and set the user name to a new div.
     var userAcc = $("<div>");
-        userAcc.addClass("welcomeUser");
-        userAcc.text($(this).attr("Fname"));
+        userAcc.addClass("welcomeUser")
+        userAcc.text($(this).attr("email"));
         $("#welcomeUser").append(userAcc);
     
     
@@ -137,27 +152,53 @@ function createAccount(){
 }
 
 
-// // When a user clicks a button 
-// $("#form").submit(function (event) {
-//     //Prevent your default behavior
-//     event.preventDefault();
 
-// $(".name").on("click", function () {
-//     //Prevent your default behavior
-//     event.preventDefault();
 
-// $(".size").on("click", function () {
-//     //Prevent your default behavior
-//     event.preventDefault();
 
-// $(".weight").on("click", function () {
-//     //Prevent your default behavior
-//     event.preventDefault();  
 
-// $(".image").on("click", function () {
-//     //Prevent your default behavior
-//     event.preventDefault();
+// const categories = [];
+// console.log(categories)
 
-// $(".color").on("click", function () {
-//     //Prevent your default behavior
-//     event.preventDefault();
+//   function renderCategory() {
+//     $(".category-area").empty();
+//     for (var i = 0; i < categories.length; i++)  {
+
+//     const newCard = $("<div>");
+//     newCard.addClass("card");
+//     newCard.width('18rem')
+//     newCard.attr("data-category", categories[i]);
+//     newCard.text(categories[i]);
+
+//     const newButton = $("<button>");
+//     newButton.addClass("category-button");
+//     newButton.attr("data-button", categories[i]);
+//     newButton.text(categories[i]);
+
+//         const newImage = $("<img>");
+//         newImage.attr('src', 'https://www.encodedna.com/images/theme/html5.png');
+        
+//         const cardBody = $("<div>");
+//         cardBody.addClass("card-body");
+
+//         // $(".card-body").append(newButton)
+
+
+
+//       $(".category-area").append(newCard).append(newButton);
+//     }
+//   }
+// renderCategory();
+// console.log(renderCategory)
+
+// $("#create-new").on("click", function(event) {
+// event.preventDefault();
+// categories.push($("#input-category").val());
+// $("#categories-display").empty();
+// renderCategory();
+// $("#exampleModalCenter").modal('hide')
+// console.log(categories);
+
+// $("#input-category").val("")
+// });
+
+
