@@ -188,3 +188,71 @@ function createAccount(){
 // });
 
 
+
+// Unsplash API
+
+$(document.body).on("click", "#create-new", function () {
+    console.log("CLICK CLICK");
+
+    const categories = [];
+    const address = [];
+
+    event.preventDefault();
+    categories.push($("#input-category").val());
+    address.push($("#input-address").val());
+    $("#categories-display").empty();
+    $("#exampleModalCenter").modal('hide')
+    console.log(categories);
+
+    var categoryName = $("#input-category").val().trim();
+    const queryURL = "https://api.unsplash.com/search/photos/?query=" +
+        categoryName + "&client_id=cd066527c83586e8821b468bcdf5df77d3d06b93987907d4918e57cc98667a46";
+    console.log(categoryName)
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+        const results = response.results[0].links.download;
+        console.log(results)
+
+
+        function renderCategory() {
+            $(".category-area").empty();
+            for (var i = 0; i < categories.length; i++) {
+
+                const newCard = $("<div>");
+                newCard.addClass("card");
+                newCard.width("18rem")
+                newCard.attr("data-category", categories[i]);
+                // newCard.text(categories[i]);
+
+                const newCardText = $("<div>");
+                newCardText.addClass("card-text");
+                // newCardText.attr("data-category", categories[i]);
+                newCardText.text(address[i]);
+
+                const newButton = $("<button>");
+                newButton.addClass("category-button");
+                newButton.attr("data-button", categories[i]);
+                newButton.text(categories[i]);
+
+
+                const newImage = $("<img>");
+                newImage.attr('src', results).width("16rem");
+
+                const cardBody = $("<div>");
+                cardBody.addClass("card-body");
+
+                // $(".card-body").append(newButton)
+
+
+                $(newCard).append(newImage).append(newButton).append(newCardText).appendTo(".category-area");
+            }
+        }
+        renderCategory();
+        $('form')[0].reset();
+    });
+
+});
+
