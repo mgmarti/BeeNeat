@@ -82,6 +82,13 @@ database.ref().on("child_added", function(snapshot) {
           console.log("signout")
         })
     });
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
 
 // function checkPassword() {
    
@@ -122,11 +129,9 @@ database.ref().on("child_added", function(snapshot) {
 function createAccount(){
    
     $("#buttons").empty();
-    $("#registerForm").empty();
-    $("#loginForm").empty();
+    $("#registerModal").modal('hide')
+    $("#loginModal").modal('hide')
     
-    
-   
     //Create a variable called "user Acc" and set the user name to a new div.
     var userAcc = $("<div>");
         userAcc.addClass("welcomeUser")
