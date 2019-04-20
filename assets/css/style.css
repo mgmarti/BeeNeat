@@ -90,6 +90,14 @@ h2 {
     color: #fee85e;
 }
 
+#new-category-btn {
+    width: 15rem;
+}
+
+.create-button-div {
+    padding: 30px;
+}
+
 .social,
 #buttons {
     margin: 50px;
@@ -121,6 +129,17 @@ h2 {
     padding: 30px;
     background-color: white;
     border-radius: 15px;
+}
+
+
+#welcomeUser {
+    padding: 50px;
+}
+
+.jumboTron {
+    position: fixed;
+    top: 0;
+    background: #fee85e;
 }
 
 

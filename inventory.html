@@ -17,37 +17,44 @@
 
 <body>
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="home.html">BEENEAT</a>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">BEENEAT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Login</a>
+                    <a class="nav-link" href="signin.html">Sign In</a>
                 </li>
+            </ul>
         </div>
     </nav>
 
-
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">LET'S BEENEAT</h1>
+        </div>
+    </div>
 
     <div id="welcomeUser"></div>
 
 
-    <!-- <div class="category-display"> -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Create New Category
-    </button>
+    <div class="create-button-div text-center">
+        <button id="new-category-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Create New Category
+        </button>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -100,56 +107,7 @@
     <div class="category-area row"></div>
 
 
-    <!DOCTYPE html>
-    <head>
-        <title>Login Form</title> 
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    </head>
-    <body>
 
-        <span href="#" class="btn btn-default" id="toggle-login">Log in</span> 
-        <span href="#" class="btn btn-default" id="toggle-register">Register</span>
-
-            <div id="loginForm">
-
-                <form id='login' action='' method='post' accept-charset='UTF-8'>
-                <fieldset>
-                    <legend>Log In</legend>
-                    <p><input type="text" name="login" value="" placeholder="studentID"></p>
-                    <p><input type="password" name="password" value="" placeholder="Password"></p>
-                    <p class="submit"><input type="submit" name="commit" value="Login"></p>
-                    </fieldset>
-                </form>
-            </div>
-
-        <div id="registerForm">
-    <form id='register' action='' method='post' accept-charset='UTF-8'>
-        <fieldset >
-            <legend>Register</legend>
-                <input type='hidden' name='submitted' id='submitted' value='1'/>
-                <p><label for='username' >UserName*:</label> <input type='text' name='username' id='username' maxlength="50" /></p>
-                <p><label for='name'>First Name*: </label> <input type='text' name='name' id='firstName' maxlength="50" /></p>
-                <p><label for='name'>Second Name*: </label> <input type='text' name='name' id='secondNname' maxlength="50" /></p>
-                <p><label for='email' >Email Address*:</label> <input type='text' name='email' id='email' maxlength="50" /></p>
-                <p><label for='password' >Password*:</label> <input type='password' name='password' id='password' maxlength="50" /></p>
-                <input type='submit' name='Submit' value='Submit' />
-                </fieldset>
-                </form>
-        </div>
-
-
-        <script>
-
-        </script> 
-    </body>
-</html>
-
-
-
-
-
-
-    
 
 
     <!-- Footer -->
@@ -160,6 +118,7 @@
     </footer>
 
 
+    <!-- jQuery Script -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
@@ -179,4 +138,4 @@
     <script src="./assets/javascript/logic.js"></script>
 </body>
 
-</html>
+</html> 
