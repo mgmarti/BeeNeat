@@ -76,7 +76,7 @@ database.ref().on("child_added", function(snapshot) {
     console.log("Login Failed!", error.message);
   })
   });
-  
+ 
       $("#logout").click(function() {
         auth.signOut().then(function(user){
           console.log("signout")
