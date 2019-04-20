@@ -14,6 +14,9 @@ var auth = firebase.auth();
 var currentUser = auth.currentUser;
 console.log(currentUser)
 
+// Starter for Sign In Page
+$("#signin-container").empty();
+
 // Create a variable to reference the database.
 
 var Fname = "";
@@ -23,6 +26,9 @@ var password = "";
 var passwordCon = "";
 var  Lemail ="";
 var Lpassword="";
+
+
+
 
 
 // on click function to Capture Button Creat account
@@ -82,13 +88,6 @@ database.ref().on("child_added", function(snapshot) {
           console.log("signout")
         })
     });
-    firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-  } else {
-    // No user is signed in.
-  }
-});
 
 // function checkPassword() {
    
@@ -129,9 +128,11 @@ database.ref().on("child_added", function(snapshot) {
 function createAccount(){
    
     $("#buttons").empty();
-    $("#registerModal").modal('hide')
-    $("#loginModal").modal('hide')
+    $("#registerForm").empty();
+    $("#loginForm").empty();
     
+    
+   
     //Create a variable called "user Acc" and set the user name to a new div.
     var userAcc = $("<div>");
         userAcc.addClass("welcomeUser")
@@ -143,54 +144,21 @@ function createAccount(){
 }
 
 
+// Login & Register Show/Hide 
+$(document).ready(function(){
+    $("#loginForm").hide();
+    
+    $("#toggle-signin").click(function(){
+        $("#registerForm").hide();
+        $("#loginForm").toggle();
+    });
+    
+    $("#toggle-register").click(function(){
+        $("#loginForm").hide();
+        $("#registerForm").toggle();
+    });
+})
 
-
-
-
-// const categories = [];
-// console.log(categories)
-
-//   function renderCategory() {
-//     $(".category-area").empty();
-//     for (var i = 0; i < categories.length; i++)  {
-
-//     const newCard = $("<div>");
-//     newCard.addClass("card");
-//     newCard.width('18rem')
-//     newCard.attr("data-category", categories[i]);
-//     newCard.text(categories[i]);
-
-//     const newButton = $("<button>");
-//     newButton.addClass("category-button");
-//     newButton.attr("data-button", categories[i]);
-//     newButton.text(categories[i]);
-
-//         const newImage = $("<img>");
-//         newImage.attr('src', 'https://www.encodedna.com/images/theme/html5.png');
-        
-//         const cardBody = $("<div>");
-//         cardBody.addClass("card-body");
-
-//         // $(".card-body").append(newButton)
-
-
-
-//       $(".category-area").append(newCard).append(newButton);
-//     }
-//   }
-// renderCategory();
-// console.log(renderCategory)
-
-// $("#create-new").on("click", function(event) {
-// event.preventDefault();
-// categories.push($("#input-category").val());
-// $("#categories-display").empty();
-// renderCategory();
-// $("#exampleModalCenter").modal('hide')
-// console.log(categories);
-
-// $("#input-category").val("")
-// });
 
 
 
@@ -205,13 +173,13 @@ $(document.body).on("click", "#create-new", function () {
     event.preventDefault();
     categories.push($("#input-category").val());
     address.push($("#input-address").val());
-    $("#categories-display").empty();
+    // $("#categories-display").empty();
     $("#exampleModalCenter").modal('hide')
     console.log(categories);
 
     var categoryName = $("#input-category").val().trim();
     const queryURL = "https://api.unsplash.com/search/photos/?query=" +
-        categoryName + "&client_id=cd066527c83586e8821b468bcdf5df77d3d06b93987907d4918e57cc98667a46";
+        categoryName + "&client_id=cd066527c83586e8821b468bcdf5df77d3d06b93987907d4918e57cc98667a46&orientation=landscape";
     console.log(categoryName)
     $.ajax({
         url: queryURL,
@@ -223,12 +191,11 @@ $(document.body).on("click", "#create-new", function () {
 
 
         function renderCategory() {
-            $(".category-area").empty();
             for (var i = 0; i < categories.length; i++) {
 
                 const newCard = $("<div>");
                 newCard.addClass("card");
-                newCard.width("18rem")
+                newCard.width("18rem");
                 newCard.attr("data-category", categories[i]);
                 // newCard.text(categories[i]);
 
@@ -242,15 +209,11 @@ $(document.body).on("click", "#create-new", function () {
                 newButton.attr("data-button", categories[i]);
                 newButton.text(categories[i]);
 
-
                 const newImage = $("<img>");
-                newImage.attr('src', results).width("16rem");
+                newImage.attr('src', results).width("18rem");
 
                 const cardBody = $("<div>");
                 cardBody.addClass("card-body");
-
-                // $(".card-body").append(newButton)
-
 
                 $(newCard).append(newImage).append(newButton).append(newCardText).appendTo(".category-area");
             }
