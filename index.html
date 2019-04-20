@@ -21,144 +21,79 @@
 
 
 <body>
+
   <!-- navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="home.html">BEENEAT</a>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">BEENEAT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Login</a>
+          <a class="nav-link" href="signin.html">Sign In</a>
         </li>
       </ul>
     </div>
   </nav>
-  <!-- Jumbotron -->
-  <div class="header">
+
+  <!-- jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
-      <h1>BEENEAT</h1>
-      <h2>A place for everything and everything is in its place.</h2>
+      <h1 class="display-4">BEENEAT</h1>
+      <h5>A place for everything and everything is in its place.</h5>
     </div>
   </div>
 
+  <!-- Main Container -->
   <div class="container">
-    <div class="userAuth authenticated pull-right">
-      <button type="button" class="btn btn-success" id="logout">Logout</button>
-    </div>
-
-    <div class="userAuth unauthenticated pull-right">
-      <div id="buttons">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal"
-          id="register">Register</button>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal"
-          id="login">Login</button>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="text-container col-10">
+        <h2>Why BEENEAT</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto impedit sit expedita, praesentium tempora
+          nesciunt, consectetur alias optio temporibus debitis minus similique provident non eaque. Odio nostrum
+          veritatis saepe libero!
+        </p>
       </div>
-
-
+      <div class="col-1"></div>
     </div>
-    <div id="registerForm">
-      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form id="registerForm" method="POST">
-              <div class="modal-header">
-                <h4 class="modal-title" id="registerModalLabel">Register</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">First Name:</label>
-                  <input type="text" class="form-control" id="registerFirstName">
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">Last Name:</label>
-                  <input type="text" class="form-control" id="registerLastName">
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">Email:</label>
-                  <input type="text" class="form-control" id="registerEmail">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="control-label">Password:</label>
-                  <input type="password" class="form-control" id="registerPassword">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="control-label">Confirm Password:</label>
-                  <input type="password" class="form-control" id="registerConfirmPassword">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h6>© 2019 BeeNeat. All rights reserved.</h6>
     </div>
-    <div id="loginForm">
-      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form id="loginForm" method="POST">
-              <div class="modal-header">
-                <h4 class="modal-title" id="loginModalLabel">Login</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">Email:</label>
-                  <input type="text" class="form-control" id="loginEmail">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="control-label">Password:</label>
-                  <input type="password" class="form-control" id="loginPassword">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" id="doLogin">Login</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+  </footer>
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <!-- Firebase Script -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 
-    <div id="welcomeUser"></div>
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <h6>© 2019 BeeNeat. All rights reserved.</h6>
-      </div>
-    </footer>
-
-
-    <!-- Firebase Script -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script src="./assets/javascript/logic.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="./assets/javascript/logic.js"></script>
 </body>
 
 </html>

@@ -1,46 +1,51 @@
 body {
-    background-image: url('../images/header-image-2.jpg');
+    /* background-image: url('../images/header-image-2.jpg'); */
     background-repeat: no-repeat, repeat;
     background-size: 100% 100%;
     overflow: auto;
     z-index: -1px;
     background-size: cover;
-    color: #fee85e;
-  }
+    color: #750e02;
+}
 
 .navbar {
-    background-color: #750e02;
-    color: #fee85e;
+    background-color: white;
+    color: #750e02;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.jumbotron {
+    background-image: url("../images/header-image-2.jpg");
+    background-size: cover;
+    color: white;
 }
 
 a:active {
-    color: #fee85e;
+    color: #750e02;
 }
 
 a:visited {
-    color: #fee85e;
+    color: #750e02;
 }
 
 a:hover {
-    color: #fee85e;
+    color: #750e02;
 }
 
-/* .jumbotron { */
-    /* background-size: cover; */
-    /* color: #fee85e;
-    background-color: rgb(red, rgba(0, 128, 0, 0.24), blue);
-} */
 
 .header {
     background-color: rgb(rgba(255, 0, 0, 0.418), green, blue);
     margin-top: 30px;
 }
 
-#form-container {
-    margin-top: 30px;
-    text-align: center;
+h2 {
+    color: #fc9a15;
 }
 
+.text-container {
+    margin-top: 20px;
+}
 
 #form-display {
     color: #750e02;
@@ -54,28 +59,43 @@ a:hover {
     text-align: left;
 }
 
-
-#card-display {
-    margin: 30px;
+.or-text {
+    margin: 20px;
 }
 
 .card {
     margin: 10px;
+    width: 100%;
 }
+
+.category-button {
+    background-color: #750e02;
+    color: #ffffff;
+}
+
+.category-area {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 
 .btn {
     background-color: #750e02;
     color: #ffffff;
+    width: 100px;
 }
 
 .btn:hover {
     background-color: #bf5d02;
     color: #fee85e;
 }
-.social,#buttons{
+
+.social,
+#buttons {
     margin: 50px;
 }
-#logout{
+
+#logout {
     float: right;
 }
 
@@ -85,9 +105,24 @@ a:hover {
     bottom: 0;
     width: 100%;
     color: #750e02;
-    padding-top: 5;
+    padding-top: 10px;
     padding-bottom: 5px;
-    background-color: #fee85e;
+    border-top: solid #fee85e;
+    background-color: white;
     text-align: center;
 
 }
+
+.form-container {
+    position: relative;
+    width: 450px;
+    margin: 0 auto 100px;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+
+/* .btn:hover, .btn:active{} */
