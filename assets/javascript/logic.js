@@ -14,6 +14,9 @@ var auth = firebase.auth();
 var currentUser = auth.currentUser;
 console.log(currentUser)
 
+// Starter for Sign In Page
+$("#signin-container").empty();
+
 // Create a variable to reference the database.
 
 var Fname = "";
@@ -23,6 +26,9 @@ var password = "";
 var passwordCon = "";
 var  Lemail ="";
 var Lpassword="";
+
+
+
 
 
 // on click function to Capture Button Creat account
@@ -138,6 +144,19 @@ function createAccount(){
 }
 
 
+// Login & Register Show/Hide 
+$("#toggle-signin").click(function(){
+    event.preventDefault();
+    $("#registerForm").hide();
+    $("#loginForm").toggle();
+});
+$("#toggle-register").click(function(){
+    $("#loginForm").hide();
+    $("#registerForm").toggle();
+});
+
+
+
 // Unsplash API
 
 $(document.body).on("click", "#create-new", function () {
@@ -155,7 +174,7 @@ $(document.body).on("click", "#create-new", function () {
 
     var categoryName = $("#input-category").val().trim();
     const queryURL = "https://api.unsplash.com/search/photos/?query=" +
-        categoryName + "&client_id=cd066527c83586e8821b468bcdf5df77d3d06b93987907d4918e57cc98667a46&orientation=squarish";
+        categoryName + "&client_id=cd066527c83586e8821b468bcdf5df77d3d06b93987907d4918e57cc98667a46&orientation=landscape";
     console.log(categoryName)
     $.ajax({
         url: queryURL,
@@ -167,12 +186,11 @@ $(document.body).on("click", "#create-new", function () {
 
 
         function renderCategory() {
-            // $(".category-area").empty();
             for (var i = 0; i < categories.length; i++) {
 
                 const newCard = $("<div>");
                 newCard.addClass("card");
-                newCard.width("16rem");
+                newCard.width("18rem");
                 newCard.attr("data-category", categories[i]);
                 // newCard.text(categories[i]);
 
@@ -186,15 +204,11 @@ $(document.body).on("click", "#create-new", function () {
                 newButton.attr("data-button", categories[i]);
                 newButton.text(categories[i]);
 
-
                 const newImage = $("<img>");
-                newImage.attr('src', results).width("16rem");
+                newImage.attr('src', results).width("18rem");
 
                 const cardBody = $("<div>");
                 cardBody.addClass("card-body");
-
-                // $(".card-body").append(newButton)
-
 
                 $(newCard).append(newImage).append(newButton).append(newCardText).appendTo(".category-area");
             }

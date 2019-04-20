@@ -6,13 +6,13 @@ body {
     z-index: -1px;
     background-size: cover;
     color: #750e02;
-  }
+}
 
 .navbar {
-    background-color: #750e02;
+    background-color: white;
     color: #750e02;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .jumbotron {
@@ -47,12 +47,6 @@ h2 {
     margin-top: 20px;
 }
 
-#form-container {
-    margin-top: 30px;
-    text-align: center;
-}
-
-
 #form-display {
     color: #750e02;
     padding: 40px;
@@ -65,28 +59,43 @@ h2 {
     text-align: left;
 }
 
-
-#card-display {
-    margin: 30px;
+.or-text {
+    margin: 20px;
 }
 
 .card {
     margin: 10px;
+    width: 100%;
 }
+
+.category-button {
+    background-color: #750e02;
+    color: #ffffff;
+}
+
+.category-area {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 
 .btn {
     background-color: #750e02;
     color: #ffffff;
+    width: 100px;
 }
 
 .btn:hover {
     background-color: #bf5d02;
     color: #fee85e;
 }
-.social,#buttons{
+
+.social,
+#buttons {
     margin: 50px;
 }
-#logout{
+
+#logout {
     float: right;
 }
 
@@ -103,3 +112,20 @@ h2 {
     text-align: center;
 
 }
+
+.form-container {
+    position: relative;
+    width: 450px;
+    margin: 0 auto 100px;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+#loginForm {
+   display: none; 
+}
+
+
+/* .btn:hover, .btn:active{} */
