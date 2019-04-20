@@ -145,15 +145,20 @@ function createAccount(){
 
 
 // Login & Register Show/Hide 
-$("#toggle-signin").click(function(){
-    event.preventDefault();
-    $("#registerForm").hide();
-    $("#loginForm").toggle();
-});
-$("#toggle-register").click(function(){
+$(document).ready(function(){
     $("#loginForm").hide();
-    $("#registerForm").toggle();
-});
+    
+    $("#toggle-signin").click(function(){
+        $("#registerForm").hide();
+        $("#loginForm").toggle();
+    });
+    
+    $("#toggle-register").click(function(){
+        $("#loginForm").hide();
+        $("#registerForm").toggle();
+    });
+})
+
 
 
 
