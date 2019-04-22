@@ -17,37 +17,60 @@
 
 <body>
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="home.html">BEENEAT</a>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/images/logo3.svg" width="50" height="50" alt="">
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Login</a>
+                    <a id="inventory-link" class="nav-link" href="inventory.html">Inventory</a>
                 </li>
+            </ul>
         </div>
     </nav>
 
-
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">LET'S BEENEAT</h1>
+        </div>
+    </div>
 
     <div id="welcomeUser"></div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="text-container col-10">
+                <p>1. Click create new category</p>
+                <p>2. Name your category and input address for the location of your self storage</p>
+                <p>3. Start adding items you have stored to the category.</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
 
-    <!-- <div class="category-display"> -->
+
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Create New Category
-    </button>
+    <div class="create-button-div text-center">
+        <button id="new-category-btn" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#exampleModalCenter">
+            Create New Category
+        </button>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -83,7 +106,7 @@
                                 </div>
                                 <div class="col-5">
                                     <label for="Zip">Zip</label>
-                                    <input type="number" class="form-control" id="Zip" required placeholder="Zip">
+                                    <input type="number" class="form-control" id="zip" required placeholder="Zip">
                                 </div>
                             </div>
                         </div>
@@ -100,56 +123,104 @@
     <div class="category-area row"></div>
 
 
-    <!DOCTYPE html>
-    <head>
-        <title>Login Form</title> 
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    </head>
-    <body>
+    <!-- Form -->
+    <form id="item-description">
+        Name:<br>
+        <input type="text" name="name" value="">
+        <br><br>
 
-        <span href="#" class="btn btn-default" id="toggle-login">Log in</span> 
-        <span href="#" class="btn btn-default" id="toggle-register">Register</span>
+        <!-- Size:<br>
+        <input type="text" name="size" value="">
+        <br><br>
+        Color:<br>
+        <input type="text" name="color" value="">
+        <br><br>
+        Weight:<br>
+        <input type="text" name="weight" value="">
+        <br><br> -->
 
-            <div id="loginForm">
+        <div id="dropdown-div">
+            <div id="dropdown-label">Size:</div>
+            <select id="dropdown">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Xtra Large">XLarge</option>
+            </select>
+            <br><br>
 
-                <form id='login' action='' method='post' accept-charset='UTF-8'>
-                <fieldset>
-                    <legend>Log In</legend>
-                    <p><input type="text" name="login" value="" placeholder="studentID"></p>
-                    <p><input type="password" name="password" value="" placeholder="Password"></p>
-                    <p class="submit"><input type="submit" name="commit" value="Login"></p>
-                    </fieldset>
-                </form>
-            </div>
+            <div id="dropdown-div">
+                <div id="dropdown-label">Color:</div>
+                <select id="dropdown">
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="red">red</option>
+                    <option value="pink">pink</option>
+                    <option value="violet">violet</option>
+                    <option value="blue">blue</option>
+                    <option value="green">green</option>
+                    <option value="brown">brown</option>
+                    <option value="gray">gray</option>
+                    <option value="magenta">magenta</option>
+                </select>
+                <br><br>
 
-        <div id="registerForm">
-    <form id='register' action='' method='post' accept-charset='UTF-8'>
-        <fieldset >
-            <legend>Register</legend>
-                <input type='hidden' name='submitted' id='submitted' value='1'/>
-                <p><label for='username' >UserName*:</label> <input type='text' name='username' id='username' maxlength="50" /></p>
-                <p><label for='name'>First Name*: </label> <input type='text' name='name' id='firstName' maxlength="50" /></p>
-                <p><label for='name'>Second Name*: </label> <input type='text' name='name' id='secondNname' maxlength="50" /></p>
-                <p><label for='email' >Email Address*:</label> <input type='text' name='email' id='email' maxlength="50" /></p>
-                <p><label for='password' >Password*:</label> <input type='password' name='password' id='password' maxlength="50" /></p>
-                <input type='submit' name='Submit' value='Submit' />
-                </fieldset>
-                </form>
-        </div>
+                <div id="dropdown-div">
+                    <div id="dropdown-label">Weight:</div>
+                    <select id="dropdown">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                        <option value="60">60</option>
+                        <option value="65">65</option>
+                        <option value="70">70</option>
+                        <option value="75">75</option>
+                        <option value="80">80</option>
+                        <option value="85">85</option>
+                        <option value="90">90</option>
+                        <option value="95">95</option>
+                        <option value="100">100</option>
+                        <option value="105">105</option>
+                        <option value="110">110</option>
+                        <option value="115">115</option>
+                        <option value="120">120</option>
+                        <option value="125">125</option>
+                        <option value="130">130</option>
+                        <option value="135">135</option>
+                        <option value="140">140</option>
+                        <option value="145">145</option>
+                        <option value="150">150</option>
+                        <option value="155">155</option>
+                        <option value="160">160</option>
+                        <option value="165">165</option>
+                        <option value="170">170</option>
+                        <option value="175">175</option>
+                        <option value="180">180</option>
+                        <option value="185">185</option>
+                        <option value="190">190</option>
+                        <option value="195">195</option>
+                        <option value="200">200</option>
+                    </select>
+                    <br><br>
+
+                    Image:<br>
+                    <input type="text" name="image" value="">
+                    <br><br>
+                    <input type="file" name="file" id="file" class="inputfile"
+                        data-multiple-caption="{count} files selected" multiple />
+                    <br><br>
+                    <button id="submit-btn">Submit Form</button>
+    </form>
 
 
-        <script>
-
-        </script> 
-    </body>
-</html>
-
-
-
-
-
-
-    
 
 
     <!-- Footer -->
@@ -160,6 +231,7 @@
     </footer>
 
 
+    <!-- jQuery Script -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
