@@ -15,7 +15,9 @@
    console.log(currentUser)
 
    // Starter for Sign In Page
-   $("#signin-container").empty();
+   $("#signin-container").hide();
+   $("#item-description").hide();
+//    $("#inventory-link").hide();
 
    // Create a variable to reference the database.
 
@@ -82,7 +84,6 @@
            console.log("Login Failed!", error.message);
        })
        
-        // window.location="inventory.html";
 
    });
 
@@ -135,12 +136,22 @@
 
        //Create a variable called "user Acc" and set the user name to a new div.
        var userAcc = $("<div>");
-
        userAcc.addClass("welcomeUser");
        userAcc.text($(this).attr("Fname"));
-       $("#welcomeUser").append(userAcc);
-
+       $("#signin-link").hide();
+       $("#inventory-link").show();
+       $("#welcomeUser").append("<h2>Welcome,</h2> ");
+       $(".form-container").hide();
+       $("#signin-container").show();
+       $("body").css({"background":"none"});
+       $("#footer").css({"background":"white"});
+       $("#footer").css("border-top", "#fee85e solid");
    }
+
+
+$("#getstarted-btn").on("click", function(){
+    $("#signin-link").hide();
+})
 
 
    // Login & Register Show/Hide 
@@ -163,11 +174,17 @@
        console.log("CLICK CLICK");
 
        const categories = [];
-       const address = [];
+       var address = [];
+       var state = [];
+       var city = [];
+       var zip = [];
 
        event.preventDefault();
        categories.push($("#input-category").val());
        address.push($("#input-address").val());
+       city.push($("#city").val());
+       state.push($("#state").val());
+       zip.push($("#zip").val());
        // $("#categories-display").empty();
        $("#exampleModalCenter").modal('hide')
        console.log(categories);
@@ -197,7 +214,7 @@
                    const newCardText = $("<div>");
                    newCardText.addClass("card-text");
                    // newCardText.attr("data-category", categories[i]);
-                   newCardText.text(address[i]);
+                   newCardText.text(address[i] + " " + city[i] + "," + " " + state[i] + " " + zip[i]);
 
                    const newButton = $("<button>");
                    newButton.addClass("category-button");

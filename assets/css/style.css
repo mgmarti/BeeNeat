@@ -10,7 +10,7 @@ body {
 
 .navbar {
     background-color: white;
-    color: #750e02;
+    color: white;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -18,7 +18,7 @@ body {
 .jumbotron {
     background-image: url("../images/header-image-2.jpg");
     background-size: cover;
-    color: white;
+    color: #750e02;
 }
 
 a:active {
@@ -39,10 +39,17 @@ a:hover {
     margin-top: 30px;
 }
 
+#logo {
+    padding-bottom: 20px;
+}
+
 h2 {
     color: #fc9a15;
 }
 
+p {
+    font-size: 1.25rem;
+}
 .text-container {
     margin-top: 20px;
 }
@@ -74,8 +81,8 @@ h2 {
 }
 
 .category-area {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
@@ -88,6 +95,12 @@ h2 {
 .btn:hover {
     background-color: #bf5d02;
     color: #fee85e;
+}
+
+#getstarted-btn {
+    background-color: #750e02;
+    color: #ffffff;
+    width: 200px;
 }
 
 #new-category-btn {
@@ -133,7 +146,8 @@ h2 {
 
 
 #welcomeUser {
-    padding: 50px;
+    position: relative;
+    width: 450px;
 }
 
 .jumboTron {
@@ -141,7 +155,3 @@ h2 {
     top: 0;
     background: #fee85e;
 }
-
-
-
-/* .btn:hover, .btn:active{} */
