@@ -93,41 +93,7 @@
        })
    });
 
-   // function checkPassword() {
-
-   //     var letter = /[a-z]/;
-   //     var letterUp = /[A-Z]/;
-   //     var number = /[0-9]/;
-
-   //     if (password.length < 6 || password != passwordCon || !letter.test(password) || !number.test(password)) {
-   //         if (password.length < 6) {
-   //             alert("Please make sure password is longer than 6 characters.")
-   //             return false;
-   //         }
-   //         if (password != passwordCon) {
-   //             alert("Please make sure passwords match.")
-   //             return false;
-   //         }
-   //         if (!letter.test(password) || !letterUp.test(password)) {
-   //             alert("Please make sure Password Includes an UpperCase and LowerCase character")
-   //             return false;
-   //         }
-   //         if (!number.test(password)) {
-   //             alert("Please make sure Password Includes a Digit")
-   //             return false;
-   //         }
-
-   //         /*email test*/
-
-   //         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-   //         if (!filter.test(email)) {
-   //             alert('Please provide a valid email address');
-   //             form.email.focus;
-   //             return false;
-   //         }
-   //         return true;
-   //     }
-   // }
+  
 
    function createAccount() {
        $("#buttons").empty();
