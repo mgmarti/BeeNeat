@@ -44,15 +44,7 @@
        password = $("#registerPassword").val().trim();
        passwordCon = $("#registerConfirmPassword").val().trim();
 
-       // database.ref().push({
-       //     Fname: Fname,
-       //     Lname: Lname,
-       //     email: email,
-       //     password: password,
-       //     passwordCon: passwordCon,
-
-       // });
-       // checkPassword();
+      
        auth.createUserWithEmailAndPassword(email, password).then(function (user) {
            createAccount();
            console.log(user)
