@@ -2,6 +2,10 @@
 
 > Live page: https://mgmarti.github.io/project-1/
 
+## Animated Gifs/Pictures of App
+
+![image](https://user-images.githubusercontent.com/47680905/57550106-fce1fc00-732a-11e9-82d4-7553e5b601eb.png)
+
 ## Project Summary
 
 > Disorganization is costly. Whether you're at home or in the office, it's stressful to be always looking for something. The Idea for this project is help the user to organize, bookkeeping and spend more time on things that matter like growing your business. In our application the user can create thier own account, make a list of a buttons. each button will represent a mini storage, The user can add items to thier mini storage. 
@@ -27,9 +31,6 @@ Target Audience: The target audience is all the users of any age.
   - Github: https://github.com/jonyung1205
   - LinkedIn
 
-## Animated Gifs/Pictures of App
-
-- Place various screens of your app here after they have been built
 
 ## Tech Stack
 
