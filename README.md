@@ -4,19 +4,25 @@
 
 ## Project Summary
 
-> Describe the problem or mission statement of the project in 2 - 3 sentences.
+> Disorganization is costly. Whether you're at home or in the office, it's stressful to be always looking for something. The Idea for this project is help the user to organize, bookkeeping and spend more time on things that matter like growing your business. In our application the user can create thier own account, make a list of a buttons. each button will represent a mini storage, The user can add items to thier mini storage. 
+The user will have the ability to name, locate and categorize their button.  
+
+Target Audience: The target audience is all the users of any age.
 
 ## Developers
 
 - Suha Alobaidi: Role
+  - Firebase interaction, Google Maps API
   - Portfolio:
   - Github: https://github.com/Suha19
   - LinkedIn: linkedin.com/in/suha-alobaidi-719236156
 - Monica Martinez: Role
+  - HTML markup, CSS Styling, Unsplash API
   - Portfolio
   - Github: https://github.com/mgmarti
   - LinkedIn
 - James Onyung: Role
+  - HTML markup
   - Portfolio:
   - Github: https://github.com/jonyung1205
   - LinkedIn
@@ -29,6 +35,8 @@
 
 - Languages: JavaScript
 - Library: Jquery
+- Firebase for persistent data storage
+- Bootstrap for extra styling and responsiveness
 
 
 ## APIs
