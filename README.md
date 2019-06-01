@@ -17,7 +17,7 @@ Target Audience: The target audience is all the users of any age.
 
 - Suha Alobaidi: Role
   - Firebase interaction, Google Maps API
-  - Portfolio:
+  - Portfolio: https://suha19.github.io/Personal-Portfolio/
   - Github: https://github.com/Suha19
   - LinkedIn: linkedin.com/in/suha-alobaidi-719236156
 - Monica Martinez: Role
