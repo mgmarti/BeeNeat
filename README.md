@@ -1,4 +1,4 @@
-# project-1
+# BeeNeat
 
 > Live page: https://mgmarti.github.io/project-1/
 
